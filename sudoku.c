@@ -7,7 +7,7 @@
 #define WIDTH 1400
 #define HEIGHT 800
 
-/*renvoie 1 si la grille est valide, 0 sinon*/
+/*fonction renvoyant 1 si la grille est valide, 0 sinon*/
 int grid_valid(Board grid){
     int x, y;
 
@@ -22,7 +22,7 @@ int grid_valid(Board grid){
     return 1;
 }
 
-/*renvoie 1 si la valeur se trouve dans la même ligne, 0 sinon*/
+/*fonction renvoyant 1 si la valeur se trouve dans la même ligne, 0 sinon*/
 int line_valid(Board grid, int x, int value){
     int y;
 
@@ -35,7 +35,7 @@ int line_valid(Board grid, int x, int value){
     return 0;
 }
 
-/*renvoie 1 si la valeur se trouve dans la même colonne, 0 sinon*/
+/*fonction renvoyant 1 si la valeur se trouve dans la même colonne, 0 sinon*/
 int column_valid(Board grid, int y, int value){
     int x;
 
@@ -48,7 +48,7 @@ int column_valid(Board grid, int y, int value){
     return 0;
 }
 
-/*renvoie 1 si la valeur se trouve dans la même case, 0 sinon*/
+/*fonction renvoyant 1 si la valeur se trouve dans la même case, 0 sinon*/
 int box_valid(Board grid, int x, int y, int value){
     int line, column;
 
@@ -63,7 +63,7 @@ int box_valid(Board grid, int x, int y, int value){
     return 0;
 }
 
-/*analyse les cliques de l'utilisateur en fonction des pixels*/
+/*fonction analysant les cliques de l'utilisateur en fonction des pixels*/
 int game_to_px(int x, int y){
     /*grand tableau*/
     int nb_sqr = 9;
@@ -89,7 +89,7 @@ int game_to_px(int x, int y){
     return 0;    
 }
 
-/*affiche la grille des numéros jouables*/
+/*fonction affichant la grille des numéros jouables*/
 void display_playable_grid(int nb_sqr, int sqr_size, int margin_top, int margin_side){
     int playable_grid[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
 
@@ -103,6 +103,14 @@ void display_playable_grid(int nb_sqr, int sqr_size, int margin_top, int margin_
             MLV_draw_text(margin_side + (sqr_size/2) + i*sqr_size, margin_top + (sqr_size/2) + e*sqr_size, playable_str, MLV_rgba(255,255,255,255));
         }
     }
+}
+
+/*fonction s'affichant à la fin du jeu (une fois le sudoku completé)*/
+void display_end(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini){
+    MLV_draw_text(margin_side,margin_top-sqr_size_mini,"SUCCÈS",MLV_rgba(255,255,255,255));
+    display_playable_grid(nb_sqr_mini, sqr_size_mini, margin_top, margin_side);
+    MLV_actualise_window();
+    usleep(10000000);
 }
 
 /*affiche les grilles du sudoku*/
@@ -120,6 +128,7 @@ void display_game(Board grid, Board ref){
     int margin_top = sqr_size_mini+HEIGHT/4;
     int margin_side = sqr_size_mini*9;  
 
+    /*paramètres de traitement*/
     char str[2];
     int caseI, caseJ;
     int posI, posJ;
@@ -172,12 +181,10 @@ void display_game(Board grid, Board ref){
                 MLV_draw_text(posI, posJ, write, MLV_rgba(255,255,255,255));
             }
         }
+
         /*si le sudoku est terminé, on affiche un message de succès*/
         if(grid_valid(grid)){
-            MLV_draw_text(margin_side,margin_top-sqr_size_mini,"SUCCÈS",MLV_rgba(255,255,255,255));
-            display_playable_grid(nb_sqr_mini, sqr_size_mini, margin_top, margin_side);
-            MLV_actualise_window();
-            usleep(10000000);
+            display_end(margin_side,margin_top,sqr_size_mini,nb_sqr_mini);
             return;
         }
 
