@@ -1,16 +1,23 @@
-all: main
+CC := gcc
+CFLAGS := -Wall -std=c17
 
-in_out.o: in_out.h in_out.c
-	gcc -c in_out.c -Wall
+all: sudoku
 
-sudoku.o: sudoku.h sudoku.c 
-	gcc -c sudoku.c -Wall `pkg-config --cflags MLV` 
+in_out.o: include/in_out.h src/in_out.c
+	$(CC) -c src/in_out.c $(CFLAGS)
 
-main.o: main.c
-	gcc -c main.c -Wall
+sudoku.o: include/sudoku.h src/sudoku.c 
+	$(CC) -c src/sudoku.c $(CFLAGS) `pkg-config --cflags MLV` 
 
-main: in_out.o sudoku.o main.o 
-	gcc -o main in_out.o sudoku.o main.o -lMLV -lm -Werror `pkg-config --cflags MLV` 
+main.o: src/main.c
+	$(CC) -c src/main.c $(CFLAGS)
+
+sudoku: in_out.o sudoku.o main.o 
+	$(CC) -o sudoku in_out.o sudoku.o main.o -lMLV -lm -Werror `pkg-config --cflags MLV` 
+
+run: in_out.o sudoku.o main.o 
+	$(CC) -o sudoku in_out.o sudoku.o main.o -lMLV -lm -Werror `pkg-config --cflags MLV` 
+	./sudoku grid1.txt
 
 clean: 
 	rm -f *.o
