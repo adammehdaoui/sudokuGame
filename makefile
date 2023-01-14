@@ -1,5 +1,6 @@
 CC := gcc
 CFLAGS := -Wall -std=c17
+LDLIBS := -lMLV -lm -Werror
 
 all: sudoku
 
@@ -13,13 +14,13 @@ main.o: src/main.c
 	$(CC) -c src/main.c $(CFLAGS)
 
 sudoku: in_out.o sudoku.o main.o 
-	$(CC) -o sudoku in_out.o sudoku.o main.o -lMLV -lm -Werror `pkg-config --cflags MLV` 
+	$(CC) -o sudoku in_out.o sudoku.o main.o $(LDLIBS) `pkg-config --cflags MLV` 
 
 run: in_out.o sudoku.o main.o 
-	$(CC) -o sudoku in_out.o sudoku.o main.o -lMLV -lm -Werror `pkg-config --cflags MLV` 
+	$(CC) -o sudoku in_out.o sudoku.o main.o $(LDLIBS) `pkg-config --cflags MLV` 
 	./sudoku grid1.txt
 
 clean: 
 	rm -f *.o
 	rm -f *~
-	rm -f main
+	rm -f sudoku
