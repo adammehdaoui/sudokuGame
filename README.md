@@ -14,8 +14,14 @@ Cloner le repo avec :
 ## Utilisation
 
 Pour lancer le sudoku avec la première grille :
-```sh make run ```
+```sh 
+make run 
+```
 
 Pour lancer le sudoku avec l'une des grilles disponibles (6 actuellement). Dans cet exemple on prend la grille 3 :
-```sh make ```
-```sh ./sudoku grid3.txt ```
+```sh
+make 
+```
+```sh 
+./sudoku grid3.txt 
+```
