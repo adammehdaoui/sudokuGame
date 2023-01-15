@@ -64,17 +64,17 @@ int box_valid(Board grid, int x, int y, int value){
 }
 
 /*fonction analysant les cliques de l'utilisateur en fonction des pixels*/
-int game_to_px(int x, int y){
+int game_to_px(int x, int y, int nb_sqr, int sqr_size, int margin, int nb_sqr_mini, int sqr_size_mini, int margin_top, int margin_side){
     /*grand tableau*/
-    int nb_sqr = 9;
-    int sqr_size = HEIGHT/(nb_sqr+3);
-    int margin = sqr_size/2;
+    // int nb_sqr = 9;
+    // int sqr_size = HEIGHT/(nb_sqr+3);
+    // int margin = sqr_size/2;
 
     /*tableau jouable*/
-    int nb_sqr_mini = 3;
-    int sqr_size_mini = HEIGHT/(nb_sqr_mini*3);
-    int margin_top = sqr_size_mini+HEIGHT/4;
-    int margin_side = sqr_size_mini*9;
+    // int nb_sqr_mini = 3;
+    // int sqr_size_mini = HEIGHT/(nb_sqr_mini*3);
+    // int margin_top = sqr_size_mini+HEIGHT/4;
+    // int margin_side = sqr_size_mini*9;
 
     /*si x et y sont dans la grille alors on retourne 1*/
     if(x>margin+sqr_size && x<margin+(sqr_size*(nb_sqr+1)) && y>margin+sqr_size && y<margin+(sqr_size*(nb_sqr+1))){
@@ -154,7 +154,7 @@ void display_game(Board grid, Board ref){
                         MLV_draw_text_with_font(margin + (sqr_size/2) + (i+1)*sqr_size, margin + (sqr_size/2) + (e+1)*sqr_size, str, font, MLV_rgba(255,255,255,255));
                     }
                 }
-                
+
             }
     }
 
@@ -165,7 +165,7 @@ void display_game(Board grid, Board ref){
     while(1){
 
         int test;
-        test = game_to_px(x,y);
+        test = game_to_px(x, y, nb_sqr, sqr_size, margin, nb_sqr_mini, sqr_size_mini, margin_top, margin_side);
 
         caseI = (int)((y-margin)/sqr_size) - 1;
         caseJ = (int)((x-margin)/sqr_size) - 1;
