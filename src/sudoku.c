@@ -127,7 +127,7 @@ void display_invalid_number(int margin_side, int margin_top, int sqr_size_mini, 
 void display_end(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
     MLV_draw_text_with_font(margin_side, margin_top-sqr_size_mini, "SUCCÈS", font, MLV_rgba(255,255,255,255));
     MLV_actualise_window(); 
-    usleep(10000000);
+    sleep(10);
 }
 
 /*efface les messages précédents*/
@@ -219,73 +219,4 @@ void display_game(Board grid, Board ref){
         MLV_wait_mouse(&x,&y);
         /*on ne rafraîchit pas la fenêtre tant que l'utilisateur n'a pas cliqué*/
     }
-}
-
-/*affiche le sudoku dans le terminal, fonction du TP6*/
-void print_board(Board grid){
-    int i, e;
-
-    for(i=0; i<9; i++){
-        printf("-------------------------------------\n");
-        for(e=0; e<9; e++){
-            if(grid[i][e]==0 && e==0){
-                printf("|   |");
-            }
-            else if(grid[i][e]==0){
-                printf("   |");
-            }
-            else if(e == 0){
-                printf("| %d |",grid[i][e]);
-            }
-            else{
-                printf(" %d |",grid[i][e]);
-            }
-        }
-        printf("\n");
-    }
-    printf("-------------------------------------\n");
-}
-
-/*résout le sudoku, fonction du TP6*/
-int permutations (Board grid, int ligne, int colonne)
-{
-    int k;
-
-    /*si on sort du sudoku (il n'y a que 9 lignes)*/
-    if (ligne > 8)
-        return 1;
-
-    /*la cellule contient une valeur: on passe à la suivante*/
-    if (grid[ligne][colonne] != 0) {
-        if (colonne == 8)
-            return permutations(grid, ligne+1, 0);
-        else
-            return permutations(grid, ligne, colonne+1);  
-    }
-
-    /*la cellule contient un zéro, on doit donc la remplir*/
-    for (k=1; k <= 9; k++)
-    {
-        if (box_valid(grid,ligne,colonne,k)==0 && line_valid(grid,ligne,k)==0 && column_valid(grid,colonne,k)==0)
-        {
-            grid[ligne][colonne] = k;
-
-            if (colonne==8) {
-                if (permutations(grid, ligne+1, 0))
-                    return 1;
-                    }
-            else{
-                if (permutations(grid, ligne, colonne+1))
-                    return 1;
-                    }        
-        }
-    }
-    /*backtracking : on remet la zone à zéro*/
-    grid[ligne][colonne] = 0;
-    print_board(grid);
-    usleep(100000);
-    system("clear");
-    usleep(100);
-
-    return 0;
 }
