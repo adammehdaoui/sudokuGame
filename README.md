@@ -35,7 +35,7 @@ make
 ./sudoku grid3.txt 
 ```
 
-### Tutoriel en jeu
+## Tutoriel en jeu
 
 1. Cliquer sur une case à remplir.
 Résultat attendu : un point d'interrogation doit s'afficher.
