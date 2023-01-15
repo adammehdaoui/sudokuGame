@@ -3,13 +3,17 @@
 ## Prérequis
 
 Compatible uniquement Linux.
+<br>
 Avoir la librairie MLV d'installé.
+<br>
 Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
 
 ## Installation
 
 Cloner le repo avec : 
-```sh git clone https://github.com/MehdaouiAdam/sudokuGame.git ```
+```sh 
+git clone https://github.com/MehdaouiAdam/sudokuGame.git 
+```
 
 ## Utilisation
 
