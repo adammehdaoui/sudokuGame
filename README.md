@@ -43,5 +43,4 @@ Résultat attendu : un point d'interrogation doit s'afficher.
 2. Cliquer sur l'un des chiffres de la grille à droite.
 
 3. Si le chiffre est valide alors il s'affiche dans la grille à remplir à l'endroit du point d'interrogation.
-<br>
 Sinon un message d'erreur s'affiche et le point d'interrogation disparaît.
