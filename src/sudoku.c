@@ -213,6 +213,8 @@ void display_game(Board grid, Board ref){
             }
             else{
                 display_invalid_number(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
+
+                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
             }
 
             lastWasQM = 0;
