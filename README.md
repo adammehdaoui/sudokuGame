@@ -4,7 +4,7 @@
 
 Compatible uniquement Linux.
 <br>
-Avoir la librairie MLV d'installé.
+Avoir la librairie MLV installée.
 <br>
 Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
 
