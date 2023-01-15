@@ -8,6 +8,8 @@ Avoir la librairie MLV installée.
 <br>
 Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
 
+<br>
+
 ## Installation
 
 Installer les packages nécessaires :
@@ -19,6 +21,8 @@ Cloner le repo avec :
 ```sh 
 git clone https://github.com/MehdaouiAdam/sudokuGame.git 
 ```
+
+<br>
 
 ## Utilisation
 
@@ -34,6 +38,8 @@ make
 ```sh 
 ./sudoku grid3.txt 
 ```
+
+<br>
 
 ## Tutoriel en jeu
 
