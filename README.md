@@ -1,5 +1,7 @@
 # sudokuGame (https://github.com/MehdaouiAdam/sudokuGame)
 
+<br>
+
 ## Prérequis
 
 Compatible uniquement Linux.
