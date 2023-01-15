@@ -2,6 +2,7 @@ CC := gcc
 CFLAGS := -Wall -std=c17
 LDLIBS := -lMLV -lm -Werror
 OBJ := in_out.o sudoku.o main.o
+MAIN := sudoku
 
 all: sudoku
 
@@ -14,12 +15,12 @@ sudoku.o: include/sudoku.h src/sudoku.c
 main.o: src/main.c
 	$(CC) -c src/main.c $(CFLAGS)
 
-sudoku: in_out.o sudoku.o main.o 
-	$(CC) -o sudoku in_out.o sudoku.o main.o $(LDLIBS)
+sudoku: $(OBJ)
+	$(CC) -o $(MAIN) $(OBJ) $(LDLIBS)
 
-run: in_out.o sudoku.o main.o 
-	$(CC) -o sudoku in_out.o sudoku.o main.o $(LDLIBS)
-	./sudoku grid1.txt
+run: $(OBJ)
+	$(CC) -o $(MAIN) $(OBJ) $(LDLIBS)
+	./$(MAIN) grid1.txt
 
 clean: 
 	rm -f *.o

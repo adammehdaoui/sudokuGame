@@ -125,14 +125,14 @@ void display_invalid_number(int margin_side, int margin_top, int sqr_size_mini, 
 
 /*fonction s'affichant à la fin du jeu (une fois le sudoku completé)*/
 void display_end(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
-    MLV_draw_text_with_font(margin_side, margin_top-sqr_size_mini, "SUCCÈS", font, MLV_rgba(255,255,255,255));
+    MLV_draw_text_with_font(margin_side, margin_top-sqr_size_mini, "SUCCÈS ! MERCI D'AVOIR JOUÉ", font, MLV_rgba(255,255,255,255));
     MLV_actualise_window(); 
-    sleep(10);
+    sleep(5);
 }
 
 /*efface les messages précédents*/
 void clear_message(int margin_side, int margin_top, int sqr_size_mini){
-    MLV_draw_filled_rectangle(margin_side, margin_top-sqr_size_mini, FONT*20, FONT, MLV_rgba(0,0,0,255));
+    MLV_draw_filled_rectangle(margin_side, margin_top-sqr_size_mini, FONT*20, FONT, MLV_rgba(255,192,203,255));
     MLV_actualise_window(); 
 }
 
@@ -153,13 +153,15 @@ void display_game(Board grid, Board ref){
 
     /*paramètres de traitement*/
     char str[2];
+    int test;
+    int lastWasQM = 0;
     int caseI, caseJ;
     int posI, posJ;
     int ligne, colonne;
 
     MLV_create_window("SUDOKU", NULL, WIDTH, HEIGHT);
 
-    MLV_clear_window(MLV_rgba(0,0,0,255));
+    MLV_clear_window(MLV_rgba(255,192,203,255));
 
     MLV_Font* font = MLV_load_font("fonts/Montserrat.ttf", FONT);
 
@@ -174,7 +176,6 @@ void display_game(Board grid, Board ref){
 
         clear_message(margin_side, margin_top, sqr_size_mini);
 
-        int test;
         test = game_to_px(x, y, nb_sqr, sqr_size, margin, nb_sqr_mini, sqr_size_mini, margin_top, margin_side);
 
         caseI = (int)((y-margin)/sqr_size) - 1;
@@ -182,12 +183,19 @@ void display_game(Board grid, Board ref){
 
         /*si clic dans la grille principale*/
         if(test == 1 && ref[caseI][caseJ] == 0){
+            if(lastWasQM){
+                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+            }
+
             posI=((x-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
             ligne = caseI;
             posJ=((y-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
             colonne = caseJ;
-            MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(0,0,0,255));
+
+            MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
             MLV_draw_text_with_font(posI, posJ, "?", font, MLV_rgba(255,255,255,255));
+
+            lastWasQM = 1;
         }
         /*si clic dans la grille de numéros jouables*/
         else if(test == 2){
@@ -199,13 +207,15 @@ void display_game(Board grid, Board ref){
                 write[0] =  value + '0';
                 write[1] = '\0';
 
-                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(0,0,0,255));
+                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
 
                 MLV_draw_text_with_font(posI, posJ, write, font, MLV_rgba(255,255,255,255));
             }
             else{
                 display_invalid_number(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
             }
+
+            lastWasQM = 0;
         }
 
         /*si le sudoku est terminé, on affiche un message de succès*/
