@@ -147,8 +147,14 @@ void display_game(Board grid, Board ref){
                 MLV_draw_rectangle(margin + (i+1) *sqr_size, margin + (e+1) *sqr_size, sqr_size, sqr_size, MLV_rgba(255,255,255,255));
 
                 if(grid[e][i] != 0){
-                    MLV_draw_text_with_font(margin + (sqr_size/2) + (i+1)*sqr_size, margin + (sqr_size/2) + (e+1)*sqr_size, str, font, MLV_rgba(255,255,255,255));
+                    if(ref[e][i]!= 0){
+                        MLV_draw_text_with_font(margin + (sqr_size/2) + (i+1)*sqr_size, margin + (sqr_size/2) + (e+1)*sqr_size, str, font, MLV_rgba(150,150,150,255));
+                    }
+                    else{
+                        MLV_draw_text_with_font(margin + (sqr_size/2) + (i+1)*sqr_size, margin + (sqr_size/2) + (e+1)*sqr_size, str, font, MLV_rgba(255,255,255,255));
+                    }
                 }
+                
             }
     }
 
