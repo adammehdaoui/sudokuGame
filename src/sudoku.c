@@ -65,16 +65,6 @@ int box_valid(Board grid, int x, int y, int value){
 
 /*fonction analysant les cliques de l'utilisateur en fonction des pixels*/
 int game_to_px(int x, int y, int nb_sqr, int sqr_size, int margin, int nb_sqr_mini, int sqr_size_mini, int margin_top, int margin_side){
-    /*grand tableau*/
-    // int nb_sqr = 9;
-    // int sqr_size = HEIGHT/(nb_sqr+3);
-    // int margin = sqr_size/2;
-
-    /*tableau jouable*/
-    // int nb_sqr_mini = 3;
-    // int sqr_size_mini = HEIGHT/(nb_sqr_mini*3);
-    // int margin_top = sqr_size_mini+HEIGHT/4;
-    // int margin_side = sqr_size_mini*9;
 
     /*si x et y sont dans la grille alors on retourne 1*/
     if(x>margin+sqr_size && x<margin+(sqr_size*(nb_sqr+1)) && y>margin+sqr_size && y<margin+(sqr_size*(nb_sqr+1))){
@@ -103,6 +93,12 @@ void display_playable_grid(int nb_sqr, int sqr_size, int margin_top, int margin_
             MLV_draw_text_with_font(margin_side + (sqr_size/2) + i*sqr_size, margin_top + (sqr_size/2) + e*sqr_size, playable_str, font, MLV_rgba(255,255,255,255));
         }
     }
+}
+
+/*fonction s'affichant lorsqu'un nombre invalide est entrée*/
+void display_invalid_number(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
+    MLV_draw_text_with_font(margin_side,margin_top-sqr_size_mini,"CE NOMBRE N'EST PAS VALIDE", font, MLV_rgba(255,0,0,255));
+    MLV_actualise_window();
 }
 
 /*fonction s'affichant à la fin du jeu (une fois le sudoku completé)*/
@@ -172,13 +168,14 @@ void display_game(Board grid, Board ref){
 
         /*si clic dans la grille principale*/
         if(test == 1 && ref[caseI][caseJ] == 0){
-            MLV_draw_text_with_font(((x-margin)/sqr_size)*sqr_size + margin + sqr_size/2,((y-margin)/sqr_size)*sqr_size + margin + sqr_size/2,"?",font,MLV_rgba(255,255,255,255));
             posI=((x-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
             ligne = caseI;
             posJ=((y-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
             colonne = caseJ;
+            MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(0,0,0,255));
+            MLV_draw_text_with_font(posI, posJ, "?", font, MLV_rgba(255,255,255,255));
         }
-        /*si clic dans la grille de numéros jouable*/
+        /*si clic dans la grille de numéros jouables*/
         else if(test == 2){
             char write[2];
             int value = ((x-margin_side)/(sqr_size_mini)) + ((y-margin_top)/(sqr_size_mini))*3 + 1;
@@ -192,11 +189,14 @@ void display_game(Board grid, Board ref){
 
                 MLV_draw_text_with_font(posI, posJ, write, font, MLV_rgba(255,255,255,255));
             }
+            else{
+                display_invalid_number(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
+            }
         }
 
         /*si le sudoku est terminé, on affiche un message de succès*/
         if(grid_valid(grid)){
-            display_end(margin_side,margin_top,sqr_size_mini,nb_sqr_mini, font);
+            display_end(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
             return;
         }
 
