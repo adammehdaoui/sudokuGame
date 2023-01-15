@@ -10,6 +10,11 @@ Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/i
 
 ## Installation
 
+Installer les packages nécessaires :
+```sh 
+sudo apt update && sudo apt install build-essential
+```
+
 Cloner le repo avec : 
 ```sh 
 git clone https://github.com/MehdaouiAdam/sudokuGame.git 
