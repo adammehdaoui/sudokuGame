@@ -1,7 +1,5 @@
 # sudokuGame (https://github.com/MehdaouiAdam/sudokuGame)
 
-<br>
-
 ## Prérequis
 
 Compatible uniquement Linux.
@@ -9,8 +7,6 @@ Compatible uniquement Linux.
 Avoir la librairie MLV installée.
 <br>
 Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
-
-<br>
 
 ## Installation
 
@@ -23,8 +19,6 @@ Cloner le repo avec :
 ```sh 
 git clone https://github.com/MehdaouiAdam/sudokuGame.git 
 ```
-
-<br>
 
 ## Utilisation
 
@@ -40,8 +34,6 @@ make
 ```sh 
 ./sudoku grid3.txt 
 ```
-
-<br>
 
 ## Tutoriel en jeu
 
