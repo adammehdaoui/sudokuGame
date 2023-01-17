@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <MLV/MLV_all.h>
 #include "../include/sudoku.h"
@@ -136,8 +134,8 @@ void clear_message(int margin_side, int margin_top, int sqr_size_mini){
     MLV_actualise_window(); 
 }
 
-/*affiche les grilles du sudoku*/
-void display_game(Board grid, Board ref){
+/*coeur du jeu*/
+void game(Board grid, Board ref){
     int x, y;
 
     /*paramètres de la grille de base*/

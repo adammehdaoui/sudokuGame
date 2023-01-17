@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <MLV/MLV_all.h>
-#include "../include/sudoku.h"
 #include "../include/in_out.h"
+#include "../include/display.h"
+#include "../include/sudoku.h"
 
 int main(int argc, char* argv[]){
   Board B, ref;
@@ -16,7 +16,7 @@ int main(int argc, char* argv[]){
     }
   }
 
-  display_game(B, ref);
+  game(B, ref);
 
   return 0;
 }
