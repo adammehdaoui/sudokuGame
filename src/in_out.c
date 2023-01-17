@@ -3,6 +3,10 @@
 #include <string.h>
 #include "../include/in_out.h"
 
+/// @brief 
+/// @param file 
+/// @param board 
+/// @return 
 int fread_board(const char *file, Board board){
   FILE* f;
   int i,j;

@@ -6,7 +6,9 @@
 #define HEIGHT 800
 #define FONT 20
 
-/*fonction renvoyant 1 si la grille est valide, 0 sinon*/
+/// @brief 
+/// @param grid 
+/// @return 
 int grid_valid(Board grid){
     int x, y;
 
@@ -21,7 +23,11 @@ int grid_valid(Board grid){
     return 1;
 }
 
-/*fonction renvoyant 1 si la valeur se trouve dans la même ligne, 0 sinon*/
+/// @brief 
+/// @param grid 
+/// @param x 
+/// @param value 
+/// @return 
 int line_valid(Board grid, int x, int value){
     int y;
 
@@ -136,7 +142,8 @@ void clear_message(int margin_side, int margin_top, int sqr_size_mini){
 
 /*coeur du jeu*/
 void game(Board grid, Board ref){
-    int x, y;
+    int x = 0;
+    int y = 0;
 
     /*paramètres de la grille de base*/
     int nb_sqr = 9;
@@ -154,7 +161,8 @@ void game(Board grid, Board ref){
     int test;
     int lastWasQM = 0;
     int caseI, caseJ;
-    int posI, posJ;
+    int posI = 0; 
+    int posJ = 0;
     int ligne, colonne;
 
     MLV_create_window("SUDOKU", NULL, WIDTH, HEIGHT);
@@ -196,7 +204,7 @@ void game(Board grid, Board ref){
             lastWasQM = 1;
         }
         /*si clic dans la grille de numéros jouables*/
-        else if(test == 2){
+        else if(test == 2 && posI!=0 && posJ!=0){
             char write[2];
             int value = ((x-margin_side)/(sqr_size_mini)) + ((y-margin_top)/(sqr_size_mini))*3 + 1;
             if(box_valid(grid,ligne,colonne,value)==0 && line_valid(grid,ligne,value)==0 && column_valid(grid,colonne,value)==0){

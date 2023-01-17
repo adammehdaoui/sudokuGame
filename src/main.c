@@ -3,6 +3,10 @@
 #include "../include/in_out.h"
 #include "../include/sudoku.h"
 
+/// @brief 
+/// @param argc 
+/// @param argv 
+/// @return 
 int main(int argc, char* argv[]){
   Board B, ref;
   int i, j;
