@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/in_out.h"
-#include "../include/display.h"
 #include "../include/sudoku.h"
 
 int main(int argc, char* argv[]){
