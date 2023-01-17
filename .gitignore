@@ -1,4 +1,13 @@
+#Ignore la conf vscode
 .vscode
+
+#Ignore les fichiers binaires
 main
 sudoku
+
+#Ignore les fichiers objets
 *.o
+
+#Ignore les fichiers détaillés doxygen
+/latex
+/html

@@ -3,10 +3,13 @@
 #include "../include/in_out.h"
 #include "../include/sudoku.h"
 
-/// @brief 
-/// @param argc 
-/// @param argv 
-/// @return 
+/*! 
+   @brief Programme principal de l'application appelant la fonction du jeu.
+   @param argc
+   @param argv
+   @returns 0 si tout s'est bien passé.
+*/
+
 int main(int argc, char* argv[]){
   Board B, ref;
   int i, j;

@@ -6,9 +6,6 @@
 #define HEIGHT 800
 #define FONT 20
 
-/// @brief 
-/// @param grid 
-/// @return 
 int grid_valid(Board grid){
     int x, y;
 
@@ -23,11 +20,6 @@ int grid_valid(Board grid){
     return 1;
 }
 
-/// @brief 
-/// @param grid 
-/// @param x 
-/// @param value 
-/// @return 
 int line_valid(Board grid, int x, int value){
     int y;
 
