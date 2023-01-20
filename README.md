@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-Testé avec un système d'exploitation Ubuntu.
+Testé avec un système d'exploitation Ubuntu et Debian.
 <br>
 Avoir la librairie MLV installée.
 <br>
