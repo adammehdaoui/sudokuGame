@@ -1,7 +1,7 @@
 CC := gcc
 CFLAGS := -Wall -std=c17
 LDLIBS := -lMLV -lm -Werror
-OBJ := in_out.o sudoku.o main.o
+OBJ := in_out.o display.o sudoku.o main.o
 MAIN := sudoku
 
 all: sudoku
@@ -9,7 +9,10 @@ all: sudoku
 in_out.o: include/in_out.h src/in_out.c
 	$(CC) -c src/in_out.c $(CFLAGS)
 
-sudoku.o: include/sudoku.h src/sudoku.c 
+display.o : include/sudoku.h include/display.h src/display.c 
+	$(CC) -c src/display.c $(CFLAGS) $(LDLIBS)
+
+sudoku.o: include/sudoku.h src/sudoku.c include/display.h
 	$(CC) -c src/sudoku.c $(CFLAGS)
 
 main.o: src/main.c
