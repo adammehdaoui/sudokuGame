@@ -1,6 +1,5 @@
 #include "../include/display.h"
 #include <MLV/MLV_all.h>
-#include <unistd.h>
 
 #define NAME "SUDOKU"
 
@@ -51,7 +50,15 @@ void display_base_grid(int nb_sqr, int sqr_size, int margin, Board grid, Board r
     }
 }
 
-/*fonction affichant la grille des numéros jouables*/
+/**
+ * @brief Fonction affichant la grille des numéros jouables (de 1 à 9)
+ * 
+ * @param nb_sqr 
+ * @param sqr_size 
+ * @param margin_top 
+ * @param margin_side 
+ * @param font 
+ */
 void display_playable_grid(int nb_sqr, int sqr_size, int margin_top, int margin_side, MLV_Font* font){
     int playable_grid[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
 
@@ -67,20 +74,83 @@ void display_playable_grid(int nb_sqr, int sqr_size, int margin_top, int margin_
     }
 }
 
-/*fonction s'affichant lorsqu'un nombre invalide est entrée*/
-void display_invalid_number(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
-    MLV_draw_text_with_font(margin_side,margin_top-sqr_size_mini,"CE NOMBRE N'EST PAS VALIDE", font, MLV_rgba(255,0,0,255));
-    MLV_actualise_window();
+/**
+ * @brief Fonction affichant un point d'interrogation dans la grille à compléter
+ * 
+ * @param posI 
+ * @param posJ 
+ * @param sqr_size 
+ * @param font 
+ */
+void display_question_mark(int posI, int posJ, int sqr_size, MLV_Font* font){
+    MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+    MLV_draw_text_with_font(posI, posJ, "?", font, MLV_rgba(255,255,255,255));
 }
 
-/*fonction s'affichant à la fin du jeu (une fois le sudoku completé)*/
+/**
+ * @brief Fonction affichant un numéro ajouté dans la grille à compléter
+ * 
+ * @param posI 
+ * @param posJ 
+ * @param sqr_size 
+ * @param write Paramètre correspondant au numéro à afficher
+ * @param font 
+ */
+void display_number(int posI, int posJ, int sqr_size, char write[], MLV_Font* font){
+    MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+
+    MLV_draw_text_with_font(posI, posJ, write, font, MLV_rgba(255,255,255,255));
+}
+
+/**
+ * @brief Fonction affichant un message d'erreur lorsque un numéro placé est invalide
+ * 
+ * @param margin_side 
+ * @param margin_top 
+ * @param sqr_size_mini 
+ * @param nb_sqr_mini 
+ * @param font 
+ */
+void display_invalid_number(int posI, int posJ, int margin_side, int margin_top, int sqr_size, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
+    MLV_draw_text_with_font(margin_side,margin_top-sqr_size_mini,"CE NOMBRE N'EST PAS VALIDE", font, MLV_rgba(255,0,0,255));
+    MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+}
+
+/**
+ * @brief Fonction affichant un message de félicitations une fois que le jeu est terminé
+ * 
+ * @param margin_side 
+ * @param margin_top 
+ * @param sqr_size_mini 
+ * @param nb_sqr_mini 
+ * @param font 
+ */
 void display_end(int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font* font){
     MLV_draw_text_with_font(margin_side, margin_top-sqr_size_mini, "SUCCÈS ! MERCI D'AVOIR JOUÉ", font, MLV_rgba(255,255,255,255));
     MLV_actualise_window(); 
-    sleep(5);
 }
 
-/*efface les messages précédents*/
+/**
+ * @brief Fonction effacant le point d'interrogation précédent si l'on souhaite placer un chiffre
+ à une autre position
+ * 
+ * @param posI 
+ * @param posJ 
+ * @param sqr_size 
+ */
+void clear_question_mark(int posI, int posJ, int sqr_size){
+    MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+}
+
+/**
+ * @brief Fonction effacant les messages antérieurs pour ne pas les garder trop longtemps 
+ au sein du jeu
+ * 
+ * @param margin_side 
+ * @param margin_top 
+ * @param sqr_size_mini 
+ * @param font_size 
+ */
 void clear_message(int margin_side, int margin_top, int sqr_size_mini, int font_size){
     MLV_draw_filled_rectangle(margin_side, margin_top-sqr_size_mini, font_size*20, font_size, MLV_rgba(255,192,203,255));
     MLV_actualise_window(); 

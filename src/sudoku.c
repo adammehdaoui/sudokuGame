@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <MLV/MLV_all.h>
 #include "../include/sudoku.h"
 #include "../include/display.h"
 
@@ -7,7 +6,12 @@
 #define HEIGHT 800
 #define FONT 20
 
-/*fonction renvoyant 1 si la grille est valide, 0 sinon*/
+/**
+ * @brief Fonction testant si une grille est complétée et valide
+ * 
+ * @param grid 
+ * @return int Retourne 1 si la grille est complétée et valide, 0 sinon
+ */
 int grid_valid(Board grid){
     int x, y;
 
@@ -22,7 +26,14 @@ int grid_valid(Board grid){
     return 1;
 }
 
-/*fonction renvoyant 1 si la valeur se trouve dans la même ligne, 0 sinon*/
+/**
+ * @brief Fonction testant si un chiffre est plaçable en fonction de sa ligne
+ * 
+ * @param grid 
+ * @param x 
+ * @param value 
+ * @return int Retourne 1 si le chiffre est plaçable en fonction de sa ligne, 0 sinon
+ */
 int line_valid(Board grid, int x, int value){
     int y;
 
@@ -35,7 +46,14 @@ int line_valid(Board grid, int x, int value){
     return 0;
 }
 
-/*fonction renvoyant 1 si la valeur se trouve dans la même colonne, 0 sinon*/
+/**
+ * @brief Fonction testant si un chiffre est plaçable en fonction de sa colonne
+ * 
+ * @param grid 
+ * @param x 
+ * @param value 
+ * @return int Retourne 1 si le chiffre est plaçable en fonction de sa colonne, 0 sinon
+ */
 int column_valid(Board grid, int y, int value){
     int x;
 
@@ -48,7 +66,14 @@ int column_valid(Board grid, int y, int value){
     return 0;
 }
 
-/*fonction renvoyant 1 si la valeur se trouve dans la même case, 0 sinon*/
+/**
+ * @brief Fonction testant si un chiffre est plaçable en fonction de sa box (ici 3x3)
+ * 
+ * @param grid 
+ * @param x 
+ * @param value 
+ * @return int Retourne 1 si le chiffre est plaçable en fonction de sa box, 0 sinon
+ */
 int box_valid(Board grid, int x, int y, int value){
     int line, column;
 
@@ -63,23 +88,42 @@ int box_valid(Board grid, int x, int y, int value){
     return 0;
 }
 
-/*fonction analysant les cliques de l'utilisateur en fonction des pixels*/
+/**
+ * @brief Fonction analysant les clics de l'utilateur
+ * 
+ * @param x 
+ * @param y 
+ * @param nb_sqr 
+ * @param sqr_size 
+ * @param margin 
+ * @param nb_sqr_mini 
+ * @param sqr_size_mini 
+ * @param margin_top 
+ * @param margin_side 
+ * @return int Retourne 1 si le clic est dans la grille à compléter ou retourne 2 si le clic
+ est dans la grille des numéros jouables, 0 sinon
+ */
 int game_to_px(int x, int y, int nb_sqr, int sqr_size, int margin, int nb_sqr_mini, int sqr_size_mini, int margin_top, int margin_side){
-
-    /*si x et y sont dans la grille alors on retourne 1*/
+    
     if(x>margin+sqr_size && x<margin+(sqr_size*(nb_sqr+1)) && y>margin+sqr_size && y<margin+(sqr_size*(nb_sqr+1))){
         return 1;
     }
-    /*si x et y sont dans la grille jouable alors on retourne 2*/
+
     else if(x>margin_side && x<margin_side+(sqr_size_mini*nb_sqr_mini) && y>margin_top && y<margin_top+(sqr_size_mini*nb_sqr_mini)){
         return 2;
     }
 
-    /*sinon on retourne 0*/
     return 0;    
 }
 
-/*coeur du jeu*/
+/**
+ * @brief Fonction principale contenant la plupart des appels de fonctions dans le cadre du 
+ jeu
+ * 
+ * @param grid Paramètre correspondant à la grille à compléter (sera modifié au cours du jeu)
+ * @param ref Paramètre correspondant à la grille à compléter au départ 
+ (ne sera pas modifié au cours du jeu)
+ */
 void game(Board grid, Board ref){
     int x = 0;
     int y = 0;
@@ -104,6 +148,7 @@ void game(Board grid, Board ref){
     int posJ = 0;
     int ligne, colonne;
 
+    /*initialise le jeu*/
     MLV_Font* font = display_init(WIDTH, HEIGHT, FONT);
 
     /*affichage de la grille avec ses numéros*/
@@ -115,17 +160,20 @@ void game(Board grid, Board ref){
     /*traitement des clics*/
     while(1){
 
+        /*nettoie les messages précédents pour ne pas polluer le jeu*/
         clear_message(margin_side, margin_top, sqr_size_mini, FONT);
 
+        /*analyse des clics de l'utilisateur*/
         test = game_to_px(x, y, nb_sqr, sqr_size, margin, nb_sqr_mini, sqr_size_mini, margin_top, margin_side);
 
+        /*récupération de l'indice des cases en fonction de leurs coordonnées dans le jeu*/
         caseI = (int)((y-margin)/sqr_size) - 1;
         caseJ = (int)((x-margin)/sqr_size) - 1;
 
         /*si clic dans la grille principale*/
         if(test == 1 && ref[caseI][caseJ] == 0){
             if(lastWasQM){
-                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+                clear_question_mark(posI, posJ, sqr_size);
             }
 
             posI=((x-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
@@ -133,8 +181,7 @@ void game(Board grid, Board ref){
             posJ=((y-margin)/sqr_size)*sqr_size + margin + sqr_size/2;
             colonne = caseJ;
 
-            MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
-            MLV_draw_text_with_font(posI, posJ, "?", font, MLV_rgba(255,255,255,255));
+            display_question_mark(posI, posJ, sqr_size, font);
 
             lastWasQM = 1;
         }
@@ -148,28 +195,25 @@ void game(Board grid, Board ref){
                 write[0] =  value + '0';
                 write[1] = '\0';
 
-                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
-
-                MLV_draw_text_with_font(posI, posJ, write, font, MLV_rgba(255,255,255,255));
+                display_number(posI, posJ, sqr_size, write, font);
             }
             else{
-                display_invalid_number(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
-
-                MLV_draw_filled_rectangle(posI-(sqr_size/2) + 1, posJ-(sqr_size/2) + 1, sqr_size-2, sqr_size-2, MLV_rgba(255,192,203,255));
+                display_invalid_number(posI, posJ, margin_side, margin_top, sqr_size, sqr_size_mini, nb_sqr_mini, font);
             }
 
             lastWasQM = 0;
         }
 
-        /*si le sudoku est terminé, on affiche un message de succès*/
+        /*si le sudoku est terminé, on affiche un message de succès et on ferme le jeu*/
         if(grid_valid(grid)){
             display_end(margin_side, margin_top, sqr_size_mini, nb_sqr_mini, font);
+            sleep(5);
             return;
         }
 
         MLV_actualise_window();
 
-        MLV_wait_mouse(&x,&y);
         /*on ne rafraîchit pas la fenêtre tant que l'utilisateur n'a pas cliqué*/
+        MLV_wait_mouse(&x,&y);
     }
 }

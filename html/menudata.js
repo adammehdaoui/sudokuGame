@@ -27,7 +27,17 @@ var menudata={children:[
 {text:"Fichiers",url:"files.html",children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Membres de fichier",url:"globals.html",children:[
-{text:"Tout",url:"globals.html"},
+{text:"Tout",url:"globals.html",children:[
+{text:"b",url:"globals.html#index_b"},
+{text:"c",url:"globals.html#index_c"},
+{text:"d",url:"globals.html#index_d"},
+{text:"f",url:"globals.html#index_f"},
+{text:"g",url:"globals.html#index_g"},
+{text:"h",url:"globals.html#index_h"},
+{text:"l",url:"globals.html#index_l"},
+{text:"m",url:"globals.html#index_m"},
+{text:"n",url:"globals.html#index_n"},
+{text:"w",url:"globals.html#index_w"}]},
 {text:"Fonctions",url:"globals_func.html"},
 {text:"Définitions de type",url:"globals_type.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

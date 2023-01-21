@@ -3,6 +3,14 @@
 #include "../include/in_out.h"
 #include "../include/sudoku.h"
 
+/**
+ * @brief Fonction principale
+ * 
+ * @param argc 
+ * @param argv Paramètre souhaité de l'utisateur : identifiant de la grille 
+ (exemple : grid1.txt)
+ * @return int 
+ */
 int main(int argc, char* argv[]){
   Board B, ref;
   int i, j;

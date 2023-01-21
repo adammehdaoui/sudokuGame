@@ -75,7 +75,6 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="display_8h_source.html">../include/display.h</a>&quot;</code><br />
 <code>#include &lt;MLV/MLV_all.h&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -91,12 +90,25 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a4ef6c659c8d90be9d8e1cccd4536eef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille de sudoku à remplir.  <a href="display_8c.html#a4ef6c659c8d90be9d8e1cccd4536eef1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4ef6c659c8d90be9d8e1cccd4536eef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6c878c1542a048d7e5cebb55f0d6859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#aa6c878c1542a048d7e5cebb55f0d6859">display_playable_grid</a> (int nb_sqr, int sqr_size, int margin_top, int margin_side, MLV_Font *font)</td></tr>
+<tr class="memdesc:aa6c878c1542a048d7e5cebb55f0d6859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction affichant la grille des numéros jouables (de 1 à 9)  <a href="display_8c.html#aa6c878c1542a048d7e5cebb55f0d6859">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aa6c878c1542a048d7e5cebb55f0d6859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1bf625f435d661c1a78930c484f2c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#a2a1bf625f435d661c1a78930c484f2c7">display_invalid_number</a> (int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font *font)</td></tr>
-<tr class="separator:a2a1bf625f435d661c1a78930c484f2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79885cddc9acf5542590057889f95c36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#a79885cddc9acf5542590057889f95c36">display_question_mark</a> (int posI, int posJ, int sqr_size, MLV_Font *font)</td></tr>
+<tr class="memdesc:a79885cddc9acf5542590057889f95c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction affichant un point d'interrogation dans la grille à compléter.  <a href="display_8c.html#a79885cddc9acf5542590057889f95c36">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a79885cddc9acf5542590057889f95c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2744c5dbf5560d2c11c6ce2324f44a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#afb2744c5dbf5560d2c11c6ce2324f44a">display_number</a> (int posI, int posJ, int sqr_size, char write[], MLV_Font *font)</td></tr>
+<tr class="memdesc:afb2744c5dbf5560d2c11c6ce2324f44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction affichant un numéro ajouté dans la grille à compléter.  <a href="display_8c.html#afb2744c5dbf5560d2c11c6ce2324f44a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afb2744c5dbf5560d2c11c6ce2324f44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88eefd2479b59f6370033c50c5edbdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#af88eefd2479b59f6370033c50c5edbdc">display_invalid_number</a> (int posI, int posJ, int margin_side, int margin_top, int sqr_size, int sqr_size_mini, int nb_sqr_mini, MLV_Font *font)</td></tr>
+<tr class="memdesc:af88eefd2479b59f6370033c50c5edbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction affichant un message d'erreur lorsque un numéro placé est invalide.  <a href="display_8c.html#af88eefd2479b59f6370033c50c5edbdc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af88eefd2479b59f6370033c50c5edbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4149ab60ff8f9e13c04c10ce4cde3a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#a4149ab60ff8f9e13c04c10ce4cde3a68">display_end</a> (int margin_side, int margin_top, int sqr_size_mini, int nb_sqr_mini, MLV_Font *font)</td></tr>
+<tr class="memdesc:a4149ab60ff8f9e13c04c10ce4cde3a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction affichant un message de félicitations une fois que le jeu est terminé  <a href="display_8c.html#a4149ab60ff8f9e13c04c10ce4cde3a68">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4149ab60ff8f9e13c04c10ce4cde3a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae585695f1a0a863be5a95eaf382fc0fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#ae585695f1a0a863be5a95eaf382fc0fb">clear_question_mark</a> (int posI, int posJ, int sqr_size)</td></tr>
+<tr class="memdesc:ae585695f1a0a863be5a95eaf382fc0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction effacant le point d'interrogation précédent si l'on souhaite placer un chiffre à une autre position.  <a href="display_8c.html#ae585695f1a0a863be5a95eaf382fc0fb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae585695f1a0a863be5a95eaf382fc0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d88cf584584a3f74f87fa0be925ce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#a71d88cf584584a3f74f87fa0be925ce5">clear_message</a> (int margin_side, int margin_top, int sqr_size_mini, int font_size)</td></tr>
+<tr class="memdesc:a71d88cf584584a3f74f87fa0be925ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction effacant les messages antérieurs pour ne pas les garder trop longtemps au sein du jeu.  <a href="display_8c.html#a71d88cf584584a3f74f87fa0be925ce5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a71d88cf584584a3f74f87fa0be925ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des macros</h2>
@@ -152,6 +164,61 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction effacant les messages antérieurs pour ne pas les garder trop longtemps au sein du jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">margin_side</td><td></td></tr>
+    <tr><td class="paramname">margin_top</td><td></td></tr>
+    <tr><td class="paramname">sqr_size_mini</td><td></td></tr>
+    <tr><td class="paramname">font_size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae585695f1a0a863be5a95eaf382fc0fb" name="ae585695f1a0a863be5a95eaf382fc0fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae585695f1a0a863be5a95eaf382fc0fb">&#9670;&nbsp;</a></span>clear_question_mark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clear_question_mark </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction effacant le point d'interrogation précédent si l'on souhaite placer un chiffre à une autre position. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posI</td><td></td></tr>
+    <tr><td class="paramname">posJ</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -271,6 +338,18 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction affichant un message de félicitations une fois que le jeu est terminé </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">margin_side</td><td></td></tr>
+    <tr><td class="paramname">margin_top</td><td></td></tr>
+    <tr><td class="paramname">sqr_size_mini</td><td></td></tr>
+    <tr><td class="paramname">nb_sqr_mini</td><td></td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ada76228478f80db48feec06d28dc99e6" name="ada76228478f80db48feec06d28dc99e6"></a>
@@ -318,8 +397,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2a1bf625f435d661c1a78930c484f2c7" name="a2a1bf625f435d661c1a78930c484f2c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a1bf625f435d661c1a78930c484f2c7">&#9670;&nbsp;</a></span>display_invalid_number()</h2>
+<a id="af88eefd2479b59f6370033c50c5edbdc" name="af88eefd2479b59f6370033c50c5edbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af88eefd2479b59f6370033c50c5edbdc">&#9670;&nbsp;</a></span>display_invalid_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -328,6 +407,18 @@ Fonctions</h2></td></tr>
           <td class="memname">void display_invalid_number </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>margin_side</em>, </td>
         </tr>
         <tr>
@@ -335,6 +426,12 @@ Fonctions</h2></td></tr>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>margin_top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -361,6 +458,76 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction affichant un message d'erreur lorsque un numéro placé est invalide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">margin_side</td><td></td></tr>
+    <tr><td class="paramname">margin_top</td><td></td></tr>
+    <tr><td class="paramname">sqr_size_mini</td><td></td></tr>
+    <tr><td class="paramname">nb_sqr_mini</td><td></td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb2744c5dbf5560d2c11c6ce2324f44a" name="afb2744c5dbf5560d2c11c6ce2324f44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb2744c5dbf5560d2c11c6ce2324f44a">&#9670;&nbsp;</a></span>display_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_number </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>write</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MLV_Font *&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction affichant un numéro ajouté dans la grille à compléter. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posI</td><td></td></tr>
+    <tr><td class="paramname">posJ</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+    <tr><td class="paramname">write</td><td>Paramètre correspondant au numéro à afficher </td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -407,6 +574,69 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction affichant la grille des numéros jouables (de 1 à 9) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb_sqr</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+    <tr><td class="paramname">margin_top</td><td></td></tr>
+    <tr><td class="paramname">margin_side</td><td></td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79885cddc9acf5542590057889f95c36" name="a79885cddc9acf5542590057889f95c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79885cddc9acf5542590057889f95c36">&#9670;&nbsp;</a></span>display_question_mark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_question_mark </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MLV_Font *&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction affichant un point d'interrogation dans la grille à compléter. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posI</td><td></td></tr>
+    <tr><td class="paramname">posJ</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

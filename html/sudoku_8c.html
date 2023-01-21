@@ -74,7 +74,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &lt;MLV/MLV_all.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="sudoku_8h_source.html">../include/sudoku.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="display_8h_source.html">../include/display.h</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -90,16 +89,22 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:ab32e4e8d2069d3a2fd9b14ac65a36d86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#ab32e4e8d2069d3a2fd9b14ac65a36d86">grid_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid)</td></tr>
+<tr class="memdesc:ab32e4e8d2069d3a2fd9b14ac65a36d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction testant si une grille est complétée et valide.  <a href="sudoku_8c.html#ab32e4e8d2069d3a2fd9b14ac65a36d86">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab32e4e8d2069d3a2fd9b14ac65a36d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac906ad16334fc505a58272bfe30206a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#ac906ad16334fc505a58272bfe30206a1">line_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int x, int value)</td></tr>
+<tr class="memdesc:ac906ad16334fc505a58272bfe30206a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction testant si un chiffre est plaçable en fonction de sa ligne.  <a href="sudoku_8c.html#ac906ad16334fc505a58272bfe30206a1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac906ad16334fc505a58272bfe30206a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5559adba7dae76501270e7e078efce79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a5559adba7dae76501270e7e078efce79">column_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int y, int value)</td></tr>
+<tr class="memdesc:a5559adba7dae76501270e7e078efce79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction testant si un chiffre est plaçable en fonction de sa colonne.  <a href="sudoku_8c.html#a5559adba7dae76501270e7e078efce79">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5559adba7dae76501270e7e078efce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29bb5127b15e2a60be4a4b2a19e4dff6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a29bb5127b15e2a60be4a4b2a19e4dff6">box_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int x, int y, int value)</td></tr>
+<tr class="memdesc:a29bb5127b15e2a60be4a4b2a19e4dff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction testant si un chiffre est plaçable en fonction de sa box (ici 3x3)  <a href="sudoku_8c.html#a29bb5127b15e2a60be4a4b2a19e4dff6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a29bb5127b15e2a60be4a4b2a19e4dff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30639abf690fd63ed77feba7182f8190"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a30639abf690fd63ed77feba7182f8190">game_to_px</a> (int x, int y, int nb_sqr, int sqr_size, int margin, int nb_sqr_mini, int sqr_size_mini, int margin_top, int margin_side)</td></tr>
+<tr class="memdesc:a30639abf690fd63ed77feba7182f8190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction analysant les clics de l'utilateur.  <a href="sudoku_8c.html#a30639abf690fd63ed77feba7182f8190">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a30639abf690fd63ed77feba7182f8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e34f5a4371f6cd159be2b08b6c73e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a68e34f5a4371f6cd159be2b08b6c73e2">game</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, <a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> ref)</td></tr>
+<tr class="memdesc:a68e34f5a4371f6cd159be2b08b6c73e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction principale contenant la plupart des appels de fonctions dans le cadre du jeu.  <a href="sudoku_8c.html#a68e34f5a4371f6cd159be2b08b6c73e2">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a68e34f5a4371f6cd159be2b08b6c73e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des macros</h2>
@@ -184,6 +189,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction testant si un chiffre est plaçable en fonction de sa box (ici 3x3) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Retourne 1 si le chiffre est plaçable en fonction de sa box, 0 sinon </dd></dl>
+
 </div>
 </div>
 <a id="a5559adba7dae76501270e7e078efce79" name="a5559adba7dae76501270e7e078efce79"></a>
@@ -218,6 +234,17 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction testant si un chiffre est plaçable en fonction de sa colonne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Retourne 1 si le chiffre est plaçable en fonction de sa colonne, 0 sinon </dd></dl>
+
 </div>
 </div>
 <a id="a68e34f5a4371f6cd159be2b08b6c73e2" name="a68e34f5a4371f6cd159be2b08b6c73e2"></a>
@@ -245,6 +272,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction principale contenant la plupart des appels de fonctions dans le cadre du jeu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td>Paramètre correspondant à la grille à compléter (sera modifié au cours du jeu) </td></tr>
+    <tr><td class="paramname">ref</td><td>Paramètre correspondant à la grille à compléter au départ (ne sera pas modifié au cours du jeu) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -316,6 +352,23 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fonction analysant les clics de l'utilateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramname">nb_sqr</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+    <tr><td class="paramname">margin</td><td></td></tr>
+    <tr><td class="paramname">nb_sqr_mini</td><td></td></tr>
+    <tr><td class="paramname">sqr_size_mini</td><td></td></tr>
+    <tr><td class="paramname">margin_top</td><td></td></tr>
+    <tr><td class="paramname">margin_side</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Retourne 1 si le clic est dans la grille à compléter ou retourne 2 si le clic est dans la grille des numéros jouables, 0 sinon </dd></dl>
+
 </div>
 </div>
 <a id="ab32e4e8d2069d3a2fd9b14ac65a36d86" name="ab32e4e8d2069d3a2fd9b14ac65a36d86"></a>
@@ -333,6 +386,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction testant si une grille est complétée et valide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Retourne 1 si la grille est complétée et valide, 0 sinon </dd></dl>
 
 </div>
 </div>
@@ -367,6 +429,17 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Fonction testant si un chiffre est plaçable en fonction de sa ligne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Retourne 1 si le chiffre est plaçable en fonction de sa ligne, 0 sinon </dd></dl>
 
 </div>
 </div>
