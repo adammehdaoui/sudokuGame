@@ -1,16 +1,15 @@
 # sudokuGame (https://github.com/MehdaouiAdam/sudokuGame)
 
-## Documentation
+## Documentation technique
 
-La documentation du code est dans le fichier Doxygen.html à la racine du projet.
-Ce document est à ouvrir avec un navigateur car il est chargé à partir des fichiers de 
-configuration Doxygen.
+La documentation technique du code est dans le **fichier Doxygen.html à la racine du projet.**
+Ce document est à ouvrir **avec un navigateur** car il est chargé à partir des fichiers de configuration Doxygen.
 
 ## Prérequis
 
 Testé avec les O.S. Ubuntu et Debian (+Kali Linux fork).
 <br>
-Avoir la librairie MLV installée.
+**Avoir la librairie MLV installée.**
 <br>
 Tutoriel pour les O.S. linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
 
