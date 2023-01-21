@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>sudokuGame: Référence du fichier /home/adam/Développement/C/sudokuGame/src/sudoku.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">sudokuGame
+   </div>
+   <div id="projectbrief">sudoku en C (projet INFO1)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8809f998216d6882cb18d54a3323748a.html">Développement</a></li><li class="navelem"><a class="el" href="dir_afa8b3c00a828b5e6fd7f37e5c8b5919.html">C</a></li><li class="navelem"><a class="el" href="dir_243fb6ee548d67de7941459355cbe841.html">sudokuGame</a></li><li class="navelem"><a class="el" href="dir_4b1ec2506bf101f3df4c636014948b52.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier sudoku.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;MLV/MLV_all.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="sudoku_8h_source.html">../include/sudoku.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="display_8h_source.html">../include/display.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a241aeeb764887ae5e3de58b98f04b16d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>&#160;&#160;&#160;1400</td></tr>
+<tr class="separator:a241aeeb764887ae5e3de58b98f04b16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>&#160;&#160;&#160;800</td></tr>
+<tr class="separator:aed89bd71aee8be823e8a20ec4e093c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda1b1c264e2f9b66d594d98e4ed7ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#adda1b1c264e2f9b66d594d98e4ed7ff6">FONT</a>&#160;&#160;&#160;20</td></tr>
+<tr class="separator:adda1b1c264e2f9b66d594d98e4ed7ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ab32e4e8d2069d3a2fd9b14ac65a36d86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#ab32e4e8d2069d3a2fd9b14ac65a36d86">grid_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid)</td></tr>
+<tr class="separator:ab32e4e8d2069d3a2fd9b14ac65a36d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac906ad16334fc505a58272bfe30206a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#ac906ad16334fc505a58272bfe30206a1">line_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int x, int value)</td></tr>
+<tr class="separator:ac906ad16334fc505a58272bfe30206a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5559adba7dae76501270e7e078efce79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a5559adba7dae76501270e7e078efce79">column_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int y, int value)</td></tr>
+<tr class="separator:a5559adba7dae76501270e7e078efce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29bb5127b15e2a60be4a4b2a19e4dff6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a29bb5127b15e2a60be4a4b2a19e4dff6">box_valid</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, int x, int y, int value)</td></tr>
+<tr class="separator:a29bb5127b15e2a60be4a4b2a19e4dff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30639abf690fd63ed77feba7182f8190"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a30639abf690fd63ed77feba7182f8190">game_to_px</a> (int x, int y, int nb_sqr, int sqr_size, int margin, int nb_sqr_mini, int sqr_size_mini, int margin_top, int margin_side)</td></tr>
+<tr class="separator:a30639abf690fd63ed77feba7182f8190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e34f5a4371f6cd159be2b08b6c73e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8c.html#a68e34f5a4371f6cd159be2b08b6c73e2">game</a> (<a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, <a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> ref)</td></tr>
+<tr class="separator:a68e34f5a4371f6cd159be2b08b6c73e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="adda1b1c264e2f9b66d594d98e4ed7ff6" name="adda1b1c264e2f9b66d594d98e4ed7ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda1b1c264e2f9b66d594d98e4ed7ff6">&#9670;&nbsp;</a></span>FONT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FONT&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed89bd71aee8be823e8a20ec4e093c1e" name="aed89bd71aee8be823e8a20ec4e093c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed89bd71aee8be823e8a20ec4e093c1e">&#9670;&nbsp;</a></span>HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HEIGHT&#160;&#160;&#160;800</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a241aeeb764887ae5e3de58b98f04b16d" name="a241aeeb764887ae5e3de58b98f04b16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a241aeeb764887ae5e3de58b98f04b16d">&#9670;&nbsp;</a></span>WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIDTH&#160;&#160;&#160;1400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a29bb5127b15e2a60be4a4b2a19e4dff6" name="a29bb5127b15e2a60be4a4b2a19e4dff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29bb5127b15e2a60be4a4b2a19e4dff6">&#9670;&nbsp;</a></span>box_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int box_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5559adba7dae76501270e7e078efce79" name="a5559adba7dae76501270e7e078efce79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5559adba7dae76501270e7e078efce79">&#9670;&nbsp;</a></span>column_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int column_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68e34f5a4371f6cd159be2b08b6c73e2" name="a68e34f5a4371f6cd159be2b08b6c73e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e34f5a4371f6cd159be2b08b6c73e2">&#9670;&nbsp;</a></span>game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30639abf690fd63ed77feba7182f8190" name="a30639abf690fd63ed77feba7182f8190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30639abf690fd63ed77feba7182f8190">&#9670;&nbsp;</a></span>game_to_px()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int game_to_px </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_sqr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>margin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_sqr_mini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sqr_size_mini</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>margin_top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>margin_side</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab32e4e8d2069d3a2fd9b14ac65a36d86" name="ab32e4e8d2069d3a2fd9b14ac65a36d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab32e4e8d2069d3a2fd9b14ac65a36d86">&#9670;&nbsp;</a></span>grid_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int grid_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>grid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac906ad16334fc505a58272bfe30206a1" name="ac906ad16334fc505a58272bfe30206a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac906ad16334fc505a58272bfe30206a1">&#9670;&nbsp;</a></span>line_valid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int line_valid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a>&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

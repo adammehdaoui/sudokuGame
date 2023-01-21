@@ -8,6 +8,5 @@ sudoku
 #Ignore les fichiers objets
 *.o
 
-#Ignore les fichiers détaillés doxygen
+#Ignore certains fichiers détaillés doxygen
 /latex
-/html
