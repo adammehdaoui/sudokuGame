@@ -3,7 +3,7 @@
 ## Documentation
 
 La documentation du code est dans le fichier index.html à la racine du projet.
-Ce document est à ouvrir avec un navigateur car il est acualisé à partir des fichiers de 
+Ce document est à ouvrir avec un navigateur car il est actualisé à partir des fichiers de 
 configuration Doxygen.
 
 ## Prérequis

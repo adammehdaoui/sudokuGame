@@ -4,7 +4,14 @@
 
 #define NAME "SUDOKU"
 
-/*initialise l'affichage*/
+/**
+ * @brief Initialise l'affichage du jeu (crée une fenêtre et la remplit en rose)
+ * 
+ * @param width 
+ * @param height 
+ * @param font_size 
+ * @return MLV_Font* Variable de type "font" récupéré dans la fonction game
+ */
 MLV_Font* display_init(int width, int height, int font_size){
     MLV_create_window("NAME", NULL, width, height);
     MLV_clear_window(MLV_rgba(255,192,203,255));
@@ -12,7 +19,18 @@ MLV_Font* display_init(int width, int height, int font_size){
     return font;
 }
 
-/*fonction affichant la grille à compléter*/
+/**
+ * @brief Affiche la grille de sudoku à remplir 
+ *
+ * @param nb_sqr 
+ * @param sqr_size 
+ * @param margin 
+ * @param grid Paramètre récupéré à partir d'un fichier texte grid*.txt
+ * @param ref Paramètre permettant de garder la grille de base pour la comparer dans 
+ différents traitements
+ * @param str 
+ * @param font 
+ */
 void display_base_grid(int nb_sqr, int sqr_size, int margin, Board grid, Board ref, char str[2], MLV_Font* font){
     for(int e=0; e<nb_sqr; e++){
             for(int i=0; i<nb_sqr; i++){

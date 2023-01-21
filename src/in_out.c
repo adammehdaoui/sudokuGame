@@ -3,6 +3,13 @@
 #include <string.h>
 #include "../include/in_out.h"
 
+/**
+ * @brief Fonction récupérant le fichier texte en paramètre pour le convertir en structure de tableau
+ * 
+ * @param file 
+ * @param board 
+ * @return int 
+ */
 int fread_board(const char *file, Board board){
   FILE* f;
   int i,j;

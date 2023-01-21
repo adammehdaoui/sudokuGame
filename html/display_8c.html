@@ -85,8 +85,10 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:ada76228478f80db48feec06d28dc99e6"><td class="memItemLeft" align="right" valign="top">MLV_Font *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#ada76228478f80db48feec06d28dc99e6">display_init</a> (int width, int height, int font_size)</td></tr>
+<tr class="memdesc:ada76228478f80db48feec06d28dc99e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l'affichage du jeu (crée une fenêtre et la remplit en rose)  <a href="display_8c.html#ada76228478f80db48feec06d28dc99e6">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ada76228478f80db48feec06d28dc99e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ef6c659c8d90be9d8e1cccd4536eef1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#a4ef6c659c8d90be9d8e1cccd4536eef1">display_base_grid</a> (int nb_sqr, int sqr_size, int margin, <a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> grid, <a class="el" href="sudoku_8h.html#ad30eace135a78ab00f5a52d8691a16a2">Board</a> ref, char str[2], MLV_Font *font)</td></tr>
+<tr class="memdesc:a4ef6c659c8d90be9d8e1cccd4536eef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la grille de sudoku à remplir.  <a href="display_8c.html#a4ef6c659c8d90be9d8e1cccd4536eef1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4ef6c659c8d90be9d8e1cccd4536eef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6c878c1542a048d7e5cebb55f0d6859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display_8c.html#aa6c878c1542a048d7e5cebb55f0d6859">display_playable_grid</a> (int nb_sqr, int sqr_size, int margin_top, int margin_side, MLV_Font *font)</td></tr>
 <tr class="separator:aa6c878c1542a048d7e5cebb55f0d6859"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,6 +211,20 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Affiche la grille de sudoku à remplir. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb_sqr</td><td></td></tr>
+    <tr><td class="paramname">sqr_size</td><td></td></tr>
+    <tr><td class="paramname">margin</td><td></td></tr>
+    <tr><td class="paramname">grid</td><td>Paramètre récupéré à partir d'un fichier texte grid*.txt </td></tr>
+    <tr><td class="paramname">ref</td><td>Paramètre permettant de garder la grille de base pour la comparer dans différents traitements </td></tr>
+    <tr><td class="paramname">str</td><td></td></tr>
+    <tr><td class="paramname">font</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4149ab60ff8f9e13c04c10ce4cde3a68" name="a4149ab60ff8f9e13c04c10ce4cde3a68"></a>
@@ -288,6 +304,17 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialise l'affichage du jeu (crée une fenêtre et la remplit en rose) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td></td></tr>
+    <tr><td class="paramname">height</td><td></td></tr>
+    <tr><td class="paramname">font_size</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>MLV_Font* Variable de type "font" récupéré dans la fonction game </dd></dl>
 
 </div>
 </div>
