@@ -8,11 +8,11 @@ configuration Doxygen.
 
 ## Prérequis
 
-Testé avec un système d'exploitation Ubuntu et Debian.
+Testé avec les O.S. Ubuntu et Debian (+Kali Linux fork).
 <br>
 Avoir la librairie MLV installée.
 <br>
-Tutoriel pour linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
+Tutoriel pour les O.S. linux : http://www-igm.univ-mlv.fr/~boussica/mlv/api/French/html/installation_linux.html
 
 ## Installation
 
