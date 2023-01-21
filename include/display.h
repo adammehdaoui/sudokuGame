@@ -1,1 +1,0 @@
-/home/adam/Téléchargements/display.h
