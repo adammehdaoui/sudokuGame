@@ -50,3 +50,5 @@ Résultat attendu : un point d'interrogation doit s'afficher.
 
 3. Si le chiffre est valide alors il s'affiche dans la grille à remplir à l'endroit du point d'interrogation.
 Sinon un message d'erreur s'affiche et le point d'interrogation disparaît.
+
+4. Un message de succès s'affichera à la fin du Sudoku, bon courage :)
