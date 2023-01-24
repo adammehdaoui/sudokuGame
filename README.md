@@ -1,4 +1,4 @@
-# sudokuGame (https://github.com/MehdaouiAdam/sudokuGame)
+# sudokuGame (https://github.com/adammehdaoui/sudokuGame)
 
 ## Documentation technique
 
