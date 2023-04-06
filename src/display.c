@@ -12,7 +12,7 @@
  * @return MLV_Font* Variable de type "font" récupéré dans la fonction game
  */
 MLV_Font* display_init(int width, int height, int font_size){
-    MLV_create_window("NAME", NULL, width, height);
+    MLV_create_window("Sudoku", NULL, width, height);
     MLV_clear_window(MLV_rgba(255,192,203,255));
     MLV_Font* font = MLV_load_font("fonts/Montserrat.ttf", font_size);
     return font;
