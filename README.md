@@ -23,7 +23,7 @@ sudo apt update && sudo apt install build-essential
 
 Cloner le repo avec : 
 ```sh 
-git clone https://github.com/MehdaouiAdam/sudokuGame.git 
+git clone https://github.com/adammehdaoui/sudokuGame.git 
 ```
 
 ## Utilisation
