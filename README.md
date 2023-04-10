@@ -1,4 +1,4 @@
-# sudokuGame (https://github.com/adammehdaoui/sudokuGame), projet de sudoku pour l'ESIEE Paris
+# sudokuGame (https://github.com/adammehdaoui/sudokuGame), projet de sudoku
 
 ## Documentation technique
 
